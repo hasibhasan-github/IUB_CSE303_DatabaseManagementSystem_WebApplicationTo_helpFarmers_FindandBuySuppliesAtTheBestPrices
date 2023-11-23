@@ -2,11 +2,11 @@
 
 2.	git remote add origin https://github.com/hasibhasan-github/IUB_CSE303_DatabaseManagementSystem_WebApplicationTo_helpFarmers_FindandBuySuppliesAtTheBestPrices.git
 
-3.	git branch M main
+3.	git branch -M master
 
 4.	git pull
 
-5.	 git pull https://github.com/hasibhasan-github/IUB_CSE303_DatabaseManagementSystem_WebApplicationTo_helpFarmers_FindandBuySuppliesAtTheBestPrices.git main
+5.	 git pull https://github.com/hasibhasan-github/IUB_CSE303_DatabaseManagementSystem_WebApplicationTo_helpFarmers_FindandBuySuppliesAtTheBestPrices.git master
 
 6.	git add .
 
@@ -14,9 +14,13 @@
 
 8.	git remote add origin https://github.com/hasibhasan-github/IUB_CSE303_DatabaseManagementSystem_WebApplicationTo_helpFarmers_FindandBuySuppliesAtTheBestPrices.git
 
-9.	git branch -M main
+9.	git branch -M master
 
-10.	git push -u origin main
+10.	git push -u origin master
+
+Configuration:
+
+
 
 
 Extra:
