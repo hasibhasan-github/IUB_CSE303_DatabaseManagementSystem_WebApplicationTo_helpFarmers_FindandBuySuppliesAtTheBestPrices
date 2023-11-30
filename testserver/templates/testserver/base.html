@@ -1,5 +1,6 @@
 <!-- <span style="font-family: verdana, geneva, sans-serif;"> -->
-    <!DOCTYPE html>
+  {% load static %}  
+  <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -7,7 +8,7 @@
       <link rel="stylesheet" href="style.css" />
       <!-- Font Awesome Cdn Link -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-      <link rel="stylesheet" href="./base.css">
+      <link rel="stylesheet" href="{% static 'testserver/base.css' %}">
     </head>
     <body>
       <div class="container">
@@ -27,7 +28,9 @@
             </a></li>
             <li><a href="">
               <i class="fas fa-wallet"></i>
-              <span class="nav-item">Products</span>
+              <span class="nav-item">
+                <a href="{% url 'testserver:testform2' %}">Products</a>
+              </span>
             </a></li>
             <li><a href="">
               <i class="fas fa-solid fa-truck"></i>
@@ -86,6 +89,12 @@
     
           <section class="main-course">
             <h1>DATA</h1>
+            <br>
+            <br>
+            <p>Hasib</p>
+            {% block content %}
+
+            {% endblock %}
             <!-- <div class="course-box">
               <ul>
                 <li class="active">In progress</li>
