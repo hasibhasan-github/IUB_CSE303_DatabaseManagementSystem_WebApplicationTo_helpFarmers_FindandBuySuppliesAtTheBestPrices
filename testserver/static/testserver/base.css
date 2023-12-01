@@ -192,3 +192,11 @@ a:hover{
   color: rgb(28, 98, 179);
 }
   /* </span> */
+
+  hr{
+    background-color: #F67280;
+    border-style: dotted, double, none;
+    height: 5px;
+    width: 100%;
+    margin: 0;
+  }

@@ -17,17 +17,30 @@
 {% endblock %}
 
 
+{% block contentDashHead %}
+  <h1>Products</h1>
+{% endblock %}
+
+
 {% block contentButton %}
   
 {% endblock %}
 
-{% block contentDashHead %}
-  <h1>HOME</h1>
-{% endblock %}
-
 
 {% block contentDash %}
-  Hajji
+
+  <ul>
+    {% for products in object_list %}
+        <div>
+            <li>
+                {{ products.prod_name }}   {{ products.prod_price }} 
+            </li>
+        </div>
+    {% endfor %}
+    
+  </ul>
+
 {% endblock %}
+
 
 

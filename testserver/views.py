@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView, CreateView
+from django.views.generic import TemplateView, FormView, CreateView, ListView
 from testserver.forms import Testform
 
-from testserver.models import Test
+from testserver.models import Test, TestProduct
 
 # Create your views here.
 
@@ -12,7 +12,6 @@ class TestView(TemplateView):
 
 class ThankuView(TemplateView):
     template_name = 'testserver/thanku.html'
-
 
 class TestForm(FormView):
     form_class = Testform
@@ -32,4 +31,15 @@ class TestCreateView(CreateView):
     success_url = "/thanku/"
 
 
+class TestProductCreateView(CreateView):
+    model = TestProduct
+    fields = ['prod_name', 'prod_price']
+    success_url = "/thanku/"
+
+
+class TestProductListView(ListView):
+    model = TestProduct
+    queryset = TestProduct.objects.order_by('prod_name')
+
+    # context_object_name = "ProductList" // For changing object List
 

@@ -17,17 +17,24 @@
 {% endblock %}
 
 
+{% block contentDashHead %}
+  <h1>Products</h1>
+{% endblock %}
+
+
 {% block contentButton %}
   
 {% endblock %}
 
-{% block contentDashHead %}
-  <h1>HOME</h1>
-{% endblock %}
-
-
 {% block contentDash %}
-  Hajji
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit">
+          </form>
+    </div>
 {% endblock %}
+
 
 
