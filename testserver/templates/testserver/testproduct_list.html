@@ -11,9 +11,9 @@
 
 {% block contentProduct %}
 <li><a href="{% url 'testserver:productlist' %}">
-    <i class="fas fa-wallet">Product</i>
-    <span class="nav-item"></span>
-  </a></li>
+  <i class="fas fa-wallet"></i>
+  <span class="nav-item">Products</span>
+</a></li>  
 {% endblock %}
 
 
@@ -23,11 +23,47 @@
 
 
 {% block contentButton %}
-  
+<a href="{% url 'testserver:product' %}" class="button-30" role="button">Add New Products</a>
 {% endblock %}
 
 
 {% block contentDash %}
+
+<div class="table-box">
+  <div class="table-row table-head">
+      <div class="table-cell first-cell">
+          <p>Product Name</p>
+      </div>
+      <div class="table-cell">
+          <p>Product Price</p>
+      </div>
+      <div class="table-cell last-cell">
+          <p>Update Details</p>
+      </div> 
+      <div class="table-cell last-cell">
+          <p>Delete Product</p>
+      </div> 
+  </div>
+
+
+  {% for products in object_list %}
+  <div class="table-row">
+      <div class="table-cell first-cell">
+          <p>{{ products.prod_name }}</p>
+      </div>
+      <div class="table-cell">
+          <p>{{ products.prod_price }}</p>
+      </div>
+      <div class="table-cell last-cell">
+          <a href=""></a>
+      </div>   
+      <div class="table-cell last-cell">
+          <a href=""></a>
+      </div> 
+    </div>
+    {% endfor %}  
+
+</div> 
 
   <ul>
     {% for products in object_list %}
