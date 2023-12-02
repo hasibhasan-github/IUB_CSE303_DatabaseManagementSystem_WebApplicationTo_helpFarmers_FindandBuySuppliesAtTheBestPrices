@@ -1,0 +1,138 @@
+/****************************/
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+
+
+
+
+/****************************/
+/* primary variables*/
+/****************************/
+:root{
+    --primary-color: #198754;
+    --secondary-color: rgb(255, 255, 250);
+
+}
+
+
+
+
+/* General */
+*,a{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+body{
+    background-color: rgb(241, 241, 241);
+}
+
+
+
+/****************************/
+/* NAV BAR*/
+/****************************/
+
+
+#main-nav{
+    background-color: var(--primary-color);
+}
+.nav-item {
+    padding-left: 40px;
+}
+.navbar-brand{
+    font-size: 25px;
+}
+
+.navbar-brand, .nav-sign{
+    padding-left: 10px;
+}
+
+
+
+/****************************/
+/* Swiper js*/
+/****************************/
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-slider-container{
+    height: 600px;
+    width: 100%;
+  }
+
+
+  .section-gap{
+    margin: 20px 0;
+
+  }
+/****************************/
+/* Products section*/
+/****************************/
+.product-list-container{
+    margin: 10% 5%;
+    
+}
+
+.product-title{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 5%;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.product-item{
+    margin-bottom: 10%;
+    height: 400px;
+    width: 400px;
+    background-color: #024023;
+    place-self: center;
+    
+}
+
+.card-img-top{
+    width: 90%;
+    height: 90%;
+    
+}
+
+.h-100:hover{
+    border: 1px solid green;
+    box-shadow: 0 0 5px black;
+}
+
+
+
+
+.line{
+   margin: 5% 0;
+   background-color:  rgba(0, 0, 0, 0.2);
+   height: 2px;
+
+}
