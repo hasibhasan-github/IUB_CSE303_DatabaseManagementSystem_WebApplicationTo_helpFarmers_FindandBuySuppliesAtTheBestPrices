@@ -277,21 +277,21 @@
   }
   
   .home-section{
-    /* position: relative;
+    position: relative;
     background: url("ConsultancyBackground.jpg") no-repeat;
     background-position: center;
     background-size: cover;
-    /* background-color: var(--color-body);
+    /* background-color: var(--color-body); */
     min-height: 50vh;
     top:0;
     left:78px;
     width: calc(100% - 78px);
     transition: all .5s ease;
-    z-index: 2; */
+    z-index: 2;
   }
   
   .home-section .text{
-    padding-left: 5%;
+    
     display: inline-block;
     color:var(--color-default);
     font-size: 25px;
@@ -321,7 +321,16 @@
     left:78px;
     width: calc(100% - 78px);
   }
-  th, td {
+
+  th {
+    background-color: #3498db;
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    color: white;
+  }
+
+  td {
     border: 1px solid #000;
     padding: 8px;
     text-align: center;
