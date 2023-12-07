@@ -1,0 +1,34 @@
+{% extends 'SupplierDashboardBase.html' %}
+
+
+{% block contentHome %}
+<li><a href="{% url 'testserver:test' %}">
+  <i class="fas fa-home"></i>
+  <span class="nav-item">Home</span>
+</a></li>
+{% endblock %}
+
+
+{% block contentProduct %}
+  <li><a href="{% url 'testserver:productlist' %}">
+    <i class="fas fa-wallet"></i>
+    <span class="nav-item">Products</span>
+  </a></li>  
+{% endblock %}
+
+
+{% block contentButton %}
+  
+{% endblock %}
+
+{% block contentDashHead %}
+  <h1>HOME</h1>
+{% endblock %}
+
+
+{% block contentDash %}
+
+
+{% endblock %}
+
+

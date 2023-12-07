@@ -1,0 +1,209 @@
+/****************************/
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&family=Slabo+27px&display=swap');
+
+
+
+
+/****************************/
+/* primary variables*/
+/****************************/
+:root{
+    --primary-color: #198754;
+    --secondary-color: rgb(255, 255, 250);
+
+}
+
+
+
+
+/* General */
+*,a{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+body{
+    background-color: rgb(241, 241, 241);
+}
+
+
+
+/****************************/
+/* NAV BAR*/
+/****************************/
+
+
+#main-nav{
+    background-color: var(--primary-color);
+}
+.nav-item {
+    padding-left: 40px;
+}
+.navbar-brand{
+    font-size: 25px;
+}
+
+.navbar-brand, .nav-sign{
+    padding-left: 10px;
+}
+
+
+
+/****************************/
+/* Swiper js*/
+/****************************/
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    opacity: 0.6;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-slider-container{
+    height: 600px;
+    width: 100%;
+  }
+
+
+  .section-gap{
+    margin: 20px 0;
+
+  }
+/****************************/
+/* Products section*/
+/****************************/
+.product-list-container{
+    margin: 5% 5%;
+    
+}
+
+.product-title{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 5%;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.product-item{
+    margin-bottom: 10%;
+    height: 400px;
+    width: 400px;
+    background-color: #024023;
+    place-self: center;
+    
+}
+
+.card-img-top{
+    width: 90%;
+    height: 90%;
+    
+}
+
+.h-100:hover{
+    border: 1px solid green;
+    box-shadow: 0 0 5px black;
+}
+
+
+
+
+.line{
+   margin: 5% 0;
+   background-color:  rgba(0, 0, 0, 0.2);
+   height: 2px;
+
+}
+
+.col{
+    height: 500px;
+}
+
+
+
+.slide-content {
+    position: relative;
+}
+
+.slide-content p {
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Adjust the z-index to ensure the text is above the image */
+}
+
+.slide-content img {
+    width: 100%; /* Make sure the image takes the full width of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+.swiper-slide .slide-content {
+    position: relative;
+}
+
+.swiper-slide .slide-content p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white; /* Text color */
+}
+
+.swiper-slide .slide-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust the color and opacity as needed */
+    z-index: 0;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+/* prodcut */
+.product-heading{
+    text-align: center;
+    font-family: 'Slabo 27px', serif;
+    font-size:40px;
+    margin-bottom: 6%;
+
+}
