@@ -37,7 +37,7 @@
       <div class="table-cell">
           <p>Product Price</p>
       </div>
-      <div class="table-cell last-cell">
+      <div class="table-cell ">
           <p>Update Details</p>
       </div> 
       <div class="table-cell last-cell">
@@ -46,35 +46,30 @@
   </div>
 
 
+
   {% for products in object_list %}
   <div class="table-row">
-      <div class="table-cell first-cell">
-          <p>{{ products.prod_name }}</p>
-      </div>
-      <div class="table-cell">
-          <p>{{ products.prod_price }}</p>
-      </div>
-      <div class="table-cell last-cell">
-          <a href=""></a>
-      </div>   
-      <div class="table-cell last-cell">
-          <a href=""></a>
-      </div> 
+    <div class="table-cell first-cell">
+        <p>{{ products.prod_name }}</p>
     </div>
-    {% endfor %}  
+    <div class="table-cell">
+        <p>{{ products.prod_price }}</p>
+    </div>
+    <div class="table-cell ">
+        <p>Update Details</p>
+    </div> 
+    <div class="table-cell last-cell">
+        <p>Delete Product</p>
+    </div> 
+</div>
+{% endfor %}  
+
+
+
+    
+    
 
 </div> 
-
-  <ul>
-    {% for products in object_list %}
-        <div>
-            <li>
-                {{ products.prod_name }}   {{ products.prod_price }} 
-            </li>
-        </div>
-    {% endfor %}
-    
-  </ul>
 
 {% endblock %}
 

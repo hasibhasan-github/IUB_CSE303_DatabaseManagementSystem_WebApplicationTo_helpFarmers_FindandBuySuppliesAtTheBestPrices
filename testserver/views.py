@@ -36,6 +36,10 @@ class TestProductCreateView(CreateView):
     fields = ['prod_name', 'prod_price']
     success_url = "/thanku/"
 
+    labels = {
+            'prod_name': 'Product Name: ',
+        }
+
 
 class TestProductListView(ListView):
     model = TestProduct

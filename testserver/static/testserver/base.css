@@ -262,7 +262,7 @@ a:hover{
 
 .table-row{
     display: table;
-    width: 70%;
+    width: 50%;
     margin: 10px auto;
     font-family: sans-serif;
     background: transparent;
@@ -307,4 +307,51 @@ a{
 };
 
 
+/* styles.css */
+
+/* Apply some basic styling to the form */
+form.row {
+  margin-top: 20px;
+}
+
+/* Apply styling to form fields */
+.col-auto {
+  margin-bottom: 15px;
+}
+
+/* Style the email field */
+.col-auto input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+/* Style the password field */
+.col-auto input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the submit button */
+.col-auto button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add hover effect to the submit button */
+.col-auto button:hover {
+  background-color: #0056b3;
+}
 

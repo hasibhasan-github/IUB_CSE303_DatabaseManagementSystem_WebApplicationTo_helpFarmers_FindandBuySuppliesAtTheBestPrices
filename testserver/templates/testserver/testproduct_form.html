@@ -23,17 +23,45 @@
 
 
 {% block contentButton %}
-  
+<a href="{% url 'testserver:productlist' %}" class="button-30" role="button">Go to Product List</a>
 {% endblock %}
 
 {% block contentDash %}
-    <div>
+    <!-- <div style="
+    padding: 18%;
+    margin-left: 20%;">
         <form method="POST">
             {% csrf_token %}
             {{form.as_p}}
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="button-30" role="button" style="
+            margin-top: 2%;
+            margin-left: 15%;">
           </form>
-    </div>
+    </div> -->
+
+
+    <form class="row g-3" method="post" action="" style="
+    padding: 18%;">
+      {% csrf_token %}
+      
+      <div class="col-auto">
+        {{ form.prod_name.label_tag }}
+        {{ form.prod_name }}
+      </div>
+    
+      <div class="col-auto">
+        {{ form.prod_price.label_tag }}
+        {{ form.prod_price }}
+      </div>
+    
+      <div class="col-auto">
+        <input type="submit" value="Submit" class="button-30" role="button" style="
+        margin-top: 2%;
+        margin-left: 45%;">
+      </div>
+    </form>
+
+    
 {% endblock %}
 
 
