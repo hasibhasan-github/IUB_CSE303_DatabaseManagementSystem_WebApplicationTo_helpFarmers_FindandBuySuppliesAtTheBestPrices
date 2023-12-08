@@ -1,0 +1,41 @@
+{% comment %} {% extends 'tables.html' %} {% endcomment %}
+
+{% comment %} <h1>List of set_price_list (ListView)</h1> {% endcomment %}
+
+<ul>
+{% for set_price in set_price_list %}
+    <li>
+        {{set_price.Upper_Price}} {{set_price.Lower_Price}}
+    </li>
+{% endfor %}
+
+</ul>
+
+
+{% comment %} {% block content %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>description</th>
+            <th>created</th>
+            <th>updated</th>
+            <th>actions</th>
+        </tr>
+        {% for table in tables %}
+            <tr>
+                <td>{{ table.id }}</td>
+                <td>{{ table.name }}</td>
+                <td>{{ table.description }}</td>
+                <td>{{ table.created }}</td>
+                <td>{{ table.updated }}</td>
+                <td>
+                    <a href="{{ url_for('tables.show', id=table.id) }}">Show</a>
+                    <a href="{{ url_for('tables.edit', id=table.id) }}">Edit</a>
+                    <a href="{{ url_for('tables.delete', id=table.id) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+``` {% endcomment %}
