@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = 'testserver/'
 
 # Application definition
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'testserver.apps.TestserverConfig',
     'HomePage.apps.HomepageConfig',
+    'LandingPage.apps.LandingpageConfig',
 ]
 
 MIDDLEWARE = [
@@ -133,4 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
 # ]
+
+# settings.py
+AUTH_USER_MODEL = 'LandingPage.User'
+
 
