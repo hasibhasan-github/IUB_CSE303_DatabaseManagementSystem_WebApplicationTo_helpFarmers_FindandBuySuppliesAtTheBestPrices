@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import User
 
+
 class LoginForm(forms.Form):
     # SUPPLIER_CHOICES = [
     #     ('fertilizer', 'Fertilizer Supplier'),
@@ -36,6 +37,7 @@ class SignUpForm(UserCreationForm):
         ('male', 'Male'),
         ('female', 'Female'),
     ]
+
 
     SUPPLIER_CHOICES = [
         ('fertilizer', 'Fertilizer Supplier'),
@@ -94,7 +96,8 @@ class SignUpForm(UserCreationForm):
         initial="Supplier"
     )
 
+
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2', 'is_supplier', 'is_farmer')
+        fields = ('username', 'email', 'password1', 'password2', 'user_type')
 

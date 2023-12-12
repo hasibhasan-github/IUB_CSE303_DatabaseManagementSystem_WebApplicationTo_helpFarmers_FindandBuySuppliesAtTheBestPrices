@@ -7,6 +7,14 @@ from testserver.models import Test, TestProduct
 
 # Create your views here.
 
+
+globalUsername = ''
+
+def dataPassingOverSeas(username):
+    globalUsername = username
+    print('Data Passed')
+
+
 class TestView(TemplateView):
     template_name = 'testserver/base.html'
 
@@ -33,17 +41,14 @@ class TestCreateView(CreateView):
 
 class TestProductCreateView(CreateView):
     model = TestProduct
-    fields = ['prod_name', 'prod_price']
+    fields = ['productName', 'productPrice']
     success_url = "/thanku/"
 
-    labels = {
-            'prod_name': 'Product Name: ',
-        }
 
 
 class TestProductListView(ListView):
     model = TestProduct
-    queryset = TestProduct.objects.order_by('prod_name')
+    queryset = TestProduct.objects.order_by('productName')
 
     # context_object_name = "ProductList" // For changing object List
 

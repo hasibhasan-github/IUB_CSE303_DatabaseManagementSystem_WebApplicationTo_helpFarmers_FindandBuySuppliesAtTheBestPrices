@@ -5,17 +5,11 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    is_supplier= models.BooleanField('Is supplier', default=False)
-    is_farmer = models.BooleanField('Is farmer', default=False)
+    USER_TYPE_CHOICES = [
+        ('supplier', 'Supplier'),
+        ('farmer', 'Farmer'),
+    ]
     email = models.EmailField('Email address', unique=True)
-    fname = models.CharField(max_length=30, blank=True)
-    lname = models.CharField(max_length=30, blank=True)
-    gender = models.CharField(max_length=10, blank=True)
-    house = models.CharField(max_length=50, blank=True)
-    street = models.CharField(max_length=50, blank=True)
-    thana = models.CharField(max_length=50, blank=True)
-    zip = models.CharField(max_length=10, blank=True)
-    city = models.CharField(max_length=50, blank=True)
-    contactnumber = models.CharField(max_length=15, blank=True)
-    supplierType = models.CharField(max_length=50, blank=True)
-    userType = models.CharField(max_length=20, blank=True, default="Supplier")
+    user_type = models.CharField('User Type', max_length=20, choices=USER_TYPE_CHOICES, blank=True, null=True)
+
+

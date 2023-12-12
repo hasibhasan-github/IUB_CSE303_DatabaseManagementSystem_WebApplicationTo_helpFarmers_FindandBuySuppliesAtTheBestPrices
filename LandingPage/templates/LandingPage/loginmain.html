@@ -10,25 +10,25 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'HomePage/logincss/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'LandingPage/logincss/signin.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
         <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">Navbar</a>
+          <a class="navbar-brand" href="{% url 'LandingPage:LandingPage' %}">BinaryFarming</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'LandingPage:LandingPage' %}">Home</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
+              </li> -->
+              <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
                 </a>
@@ -38,19 +38,19 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
-              </li>
-              <li class="nav-item">
+              </li> -->
+              <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
+              </li> -->
             </ul>
             <form class="d-flex ">
-              <a href="./signin.html" class="btn btn-outline-success me-2" type="button">Sign In</a>
-              <a href="./signup.html" class="btn btn-outline-success" type="button">Sign Up</a>
+              <a href="{% url 'LandingPage:loginmain' %}" class="btn btn-outline-success me-2" type="button">Sign In</a>
+              <a href="{% url 'LandingPage:signup' %}" class="btn btn-outline-success" type="button">Sign Up</a>
               
             </form>
           </div>
         </div>
-      </nav> -->
+      </nav> 
 
     <!-- Sign In -->
     <section class="vh-100" style="background-color: #eee;">
@@ -67,8 +67,7 @@
                       <form method="POST" class="mx-1 mx-md-4">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        {{ msg }}
-                        <input type="submit"  value="Login" class="btn btn-pill text-white btn-block btn-primary">
+                        <input type="submit"  value="Login" class="button-30" role="button">
                         <!-- 
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
@@ -108,9 +107,19 @@
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button type="button" class="btn btn-primary btn-lg">Sign In</button>
                         </div> Email -->
+
+                      {% if msg is None %}
+                        <div style="color: red;">
+                          <p> May Allah Bless you!</p>
+                        </div>
+                      {% else %}
+                        <div style="color: red;">
+                          {{ msg }}
+                        </div>
+                      {% endif %}
       
                       </form>
-      
+                      
                     </div>
                     <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
       

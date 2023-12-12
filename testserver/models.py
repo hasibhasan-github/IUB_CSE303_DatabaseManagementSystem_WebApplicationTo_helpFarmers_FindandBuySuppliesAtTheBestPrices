@@ -20,11 +20,7 @@ class Test(models.Model):
 
 
 class TestProduct(models.Model):
-    prod_ID = models.BigAutoField(primary_key=True)
-    supp_ID = models.IntegerField(null=True)
-    prod_price = models.DecimalField(max_digits=10, decimal_places=2)
-    prod_name = models.CharField(max_length=30)
-
-    labels = {
-            'prod_name': 'Product Name: ',
-        }
+    productID = models.BigAutoField(primary_key=True)
+    supplierID = models.IntegerField(null=True)
+    productPrice = models.DecimalField(max_digits=10, decimal_places=2)
+    productName = models.CharField(max_length=30) 

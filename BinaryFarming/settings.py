@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'testserver.apps.TestserverConfig',
     'HomePage.apps.HomepageConfig',
     'LandingPage.apps.LandingpageConfig',
+    'Supplier.apps.SupplierConfig',
 ]
 
 MIDDLEWARE = [
