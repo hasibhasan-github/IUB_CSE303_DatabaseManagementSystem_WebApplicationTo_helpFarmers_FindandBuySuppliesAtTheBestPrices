@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'HomePage.apps.HomepageConfig',
     'LandingPage.apps.LandingpageConfig',
     'Supplier.apps.SupplierConfig',
+    'Product.apps.ProductConfig'
 ]
 
 MIDDLEWARE = [
