@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView, FormView, CreateView, ListView
@@ -8,6 +10,7 @@ from LandingPage.models import User
 from .models import bug
 from Product.models import pTable
 from testserver.models import Test
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -70,9 +73,9 @@ class ThankuView(TemplateView):
 
 class TestForm(FormView):
     form_class = Testform
-    template_name = 'testserver/product.html'
+    template_name = 'TestView'
 
-    success_url = "/thanku/"
+    success_url = reverse_lazy('thanku')
 
     def form_valid(self, form):
         
@@ -89,7 +92,7 @@ class TestCreateView(CreateView):
 class TestProductCreateView(CreateView):
     model = pTable
     fields = ['productName', 'productPrice']
-    success_url = "/thanku/"
+    success_url = reverse_lazy('testserver:productlist')
 
     def form_valid(self, form):
         bug_instance, created = bug.objects.get_or_create(id=784) 
@@ -110,7 +113,21 @@ class TestProductCreateView(CreateView):
 
 class TestProductListView(ListView):
     model = pTable
-    queryset = pTable.objects.order_by('productName')
+    # queryset = pTable.objects.order_by('productName')
+    
+    
+    def get_queryset(self):
+        bug_instance, created = bug.objects.get_or_create(id=784) 
+        
+        if  bug_instance.user == 'HasibNormal':
+            pass 
+        else:
+            s_table_instance, s_table_created = sTable.objects.get_or_create(supplierID=bug_instance.user)
+
+        queryset = pTable.objects.filter(supplierID =  s_table_instance.supplierID )
+
+        return queryset
+
 
     # context_object_name = "ProductList" // For changing object List
 
