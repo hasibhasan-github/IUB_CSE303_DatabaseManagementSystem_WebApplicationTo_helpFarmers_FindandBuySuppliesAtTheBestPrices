@@ -1,0 +1,94 @@
+{% extends 'SupplierDashboardBase.html' %}
+
+{% block contentHome %}
+<li><a href="{% url 'testserver:test' %}">
+  <i class="fas fa-home"></i>
+  <span class="nav-item">Home</span>
+</a></li>
+{% endblock %}
+
+
+{% block contentProduct %}
+  <li><a href="{% url 'testserver:productlist' %}">
+    <i class="fas fa-wallet"></i>
+    <span class="nav-item">Products</span>
+  </a></li>  
+{% endblock %}
+
+{% block contentDashHead %}
+  <h1>PROFILE</h1>
+{% endblock %}
+
+{% block Profile %}
+<div class="course-box">
+          
+  <div class="wrapper">
+  <div class="right">
+    <div class="info">
+        <h3>Information</h3>
+        <div class="info_data">
+             <div class="data">
+                <h4>Full Name</h4>
+                <p>{{ s_table_instance.fname }} {{ s_table_instance.lname }}</p>
+             </div>
+             <div class="data">
+               <h4>Email</h4>
+                <p>{{ s_table_instance.email }}</p>
+          </div>
+        </div>
+        <div class="info_data">
+             <div class="data">
+                <h4>Gender</h4>
+                <p>Male</p>
+             </div>
+             <div class="data">
+              <h4>Supplier Type</h4>
+                <p>{{ s_table_instance.supplierType }}</p>
+          </div>
+        </div>
+        <div class="info_data">
+             <div class="data">
+                <h4>Contact Number</h4>
+                <p>{{ s_table_instance.contactnumber }}</p>
+             </div>
+             <div class="data">
+              <h4>Address</h4>
+              <p>{{ s_table_instance.house }}, {{ s_table_instance.street }}, {{ s_table_instance.thana }}, {{ s_table_instance.zip }} {{ s_table_instance.city }}</p>
+          </div>
+        </div>
+    </div>
+  
+  <div class="projects">
+        <h3>Recent Orders</h3>
+        <div class="projects_data">
+             <div class="data">
+                <h4>Order Name</h4>
+                <p>Lorem ipsum dolor sit amet.</p>
+             </div>
+             <div class="data">
+               <h4>Order ID</h4>
+                <p>Project Description</p>
+          </div>
+        </div>
+    </div>
+  </div>           
+</div>
+
+</div>
+<!-- </section>
+
+</section> -->
+
+</div>
+{% endblock %}
+
+{% block contentButton %}
+  <!-- <p>Supplier ID: {{ s_table_instance.supplierID }}</p> -->
+  <!-- <h2> Welcome Back {{ s_table_instance.fname }} {{ s_table_instance.lname }} </h2> -->
+{% endblock %}
+
+
+{% block contentDash %}
+{{ s_table_instance.fname }} {{ s_table_instance.lname }} 
+
+{% endblock %}

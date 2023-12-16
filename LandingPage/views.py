@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.decorators import login_required
 from Supplier.models import sTable
+from Farmer.models import fTable
 from testserver.views import dataPassingOverSeas
 
 # Create your views here.
@@ -34,21 +35,35 @@ def register(request):
             city = form.cleaned_data['city']
             contact_number = form.cleaned_data['contactnumber']
             supplier_type = form.cleaned_data['supplierType']
-            user_type = form.cleaned_data['userType']
+            user_type = form.cleaned_data['user_type']
 
-            sTable.objects.create(
-                email=email,
-                fname=fname,
-                lname=lname,
-                gender=gender,
-                house=house,
-                street=street,
-                thana=thana,
-                zip=zip_code,
-                city=city,
-                contactnumber=contact_number,
-                supplierType=supplier_type,
-            )
+            if user_type == "Supplier":
+                sTable.objects.create(
+                    email=email,
+                    fname=fname,
+                    lname=lname,
+                    gender=gender,
+                    house=house,
+                    street=street,
+                    thana=thana,
+                    zip=zip_code,
+                    city=city,
+                    contactnumber=contact_number,
+                    supplierType=supplier_type,
+                )
+            else:
+                fTable.objects.create(
+                    email=email,
+                    fname=fname,
+                    lname=lname,
+                    gender=gender,
+                    house=house,
+                    street=street,
+                    thana=thana,
+                    zip=zip_code,
+                    city=city,
+                    contactnumber=contact_number,
+                )
 
             user = get_user_model().objects.create_user(
                 username  = username,
@@ -79,14 +94,16 @@ def login_view(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-            # print(user)
+            #print(user)
             if user is not None:
                 login(request, user)
-                # print(request.user.user_type)
+                #print(request.user.user_type)
                 if request.user.user_type == "Supplier":
                     # print(user.get_username())
                     dataPassingOverSeas(user.get_username())
                     return redirect('testserver/')
+                elif request.user.user_type == "farmer":
+                    return redirect('testserver/thanku/')
                 else:
                     msg = "User doesn't exits!"
                 # return redirect('testserver/')

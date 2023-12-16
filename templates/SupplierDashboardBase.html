@@ -22,7 +22,7 @@
               {% block contentHome %}
   
               {% endblock %}
-              <li><a href="">
+              <li><a href="{% url 'testserver:profile' %}">
                 <i class="fas fa-user"></i>
                 <span class="nav-item">Profile</span>
               </a></li>
@@ -59,6 +59,12 @@
                 {% endblock %}
               <i class="fas fa-user-cog"></i>
             </div>
+
+
+            <!-- Profile  -->
+            {% block Profile %}
+
+            {% endblock %}
             <!-- <div class="main-skills">
               <div class="card">
                 <i class="fas fa-laptop-code"></i>

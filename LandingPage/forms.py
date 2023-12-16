@@ -47,6 +47,11 @@ class SignUpForm(UserCreationForm):
         ('cattleandfisheries', 'Cattle And Fisheries Supplier'),
     ]
 
+    USER_TYPE_CHOICES = [
+        ('supplier', 'Supplier'),
+        ('farmer', 'Farmer'),
+    ]
+
     email = forms.EmailField(
         widget=forms.TextInput(attrs={"class": "form-control"})
     )
@@ -92,6 +97,8 @@ class SignUpForm(UserCreationForm):
     )
     userType = forms.CharField(
         max_length=20,
+        #choices = USER_TYPE_CHOICES,
+        #widget=forms.Select(attrs={"class": "form-control"}),
         widget=forms.HiddenInput(),
         initial="Supplier"
     )

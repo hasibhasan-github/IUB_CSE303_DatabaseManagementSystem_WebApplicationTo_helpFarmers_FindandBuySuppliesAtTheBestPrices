@@ -50,6 +50,24 @@ class TestView(TemplateView):
     template_name = 'testserver/base.html'
 
 
+def ProfileView(request):
+    template_name = 'testserver/profile.html'
+
+    bug_instance, created = bug.objects.get_or_create(id=784) 
+    # print(sTable.objects.get_or_create(supplierID = bug_instance.user))
+    
+    if  bug_instance.user == 'HasibNormal':
+        pass 
+    else:
+        s_table_instance, s_table_created = sTable.objects.get_or_create(supplierID=bug_instance.user)
+
+    context = {
+        's_table_instance': s_table_instance,
+    }
+
+    return render(request, template_name, context)
+
+
 def test_view(request):
     template_name = 'testserver/base.html'
 
