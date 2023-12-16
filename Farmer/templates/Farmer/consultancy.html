@@ -1,0 +1,121 @@
+{% extends 'Farmer/base.html'%}
+
+
+
+
+
+
+
+
+
+{% block title%} Consultancy {% endblock %}
+
+
+
+
+
+
+	{% block content %}
+	<main class="content">
+		<div class="container-fluid p-0">
+
+			<h1 class="h3 mb-3">Consultancy Page</h1>
+
+			<div class="row">
+
+
+				<div class="col-md-9 col-xl-10">
+					<div class="tab-content">
+						<div class="tab-pane fade show active" id="account" role="tabpanel">
+
+
+
+							<div class="card">
+								<div class="card-header">
+
+									<h5 class="card-title mb-0">Consultancy Request</h5>
+								</div>
+
+								<div class="card-body" style="width: 80%;">
+									
+									<form>
+										<div class="form-group">
+											<label for="fullName">Full Name</label>
+											<input type="text" class="form-control custom-input" id="fullName" placeholder="Enter your full name">
+										</div>
+									
+										<div class="form-group">
+											<label for="farmerId">Farmer ID</label>
+											<input type="text" class="form-control custom-input" id="farmerId" placeholder="Enter your Farmer ID">
+										</div>
+									
+										<div class="form-group">
+											<label for="phoneNo">Phone No</label>
+											<input type="text" class="form-control custom-input" id="phoneNo" placeholder="Enter your phone number">
+										</div>
+									
+										<div class="form-group">
+											<label for="email">Email address</label>
+											<input type="email" class="form-control custom-input" id="email" placeholder="name@example.com">
+										</div>
+										<div class="form-group">
+											<label for="email">Enter Date</label>
+											<input type="email" class="form-control custom-input" id="email" placeholder="YY-MM-DD">
+										</div>
+										
+									</form>
+									<div class="card-body" style="padding-left: 0;">
+										<div class="dropdown " >
+											<button class="btn btn-info dropdown-toggle" type="button"
+												id="dropdownMenuButton1" data-bs-toggle="dropdown"
+												aria-expanded="false" style="width: 650px; margin-bottom: 5%;">
+												Select Consultancy Topic
+											</button>
+											<ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1"
+												style="width: 800px; left: 18%;" >
+												<li><a class="dropdown-item" href="#">Fertilizer</a></li>
+												<li><a class="dropdown-item" href="#"> Farming Equipment & Machinery</a></li>
+												<li><a class="dropdown-item" href="#">Seeds & Soil</a></li>
+												<li><a class="dropdown-item" href="#">Weather & Season</a></li>
+												<li><a class="dropdown-item" href="#">Deseases</a></li>
+											</ul>
+										</div>
+										<div class="text-center" style="margin-bottom:8%;">
+											<button type="submit" class="btn btn-success" style="width: 200px;">Request For Consultancy</button>
+										</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								</div>
+
+
+
+
+
+							</div>
+						</div>
+
+
+					</div>
+					
+					
+				</div>
+
+		</div>
+	</main>
+	{%endblock%}
+
+			
+
+			

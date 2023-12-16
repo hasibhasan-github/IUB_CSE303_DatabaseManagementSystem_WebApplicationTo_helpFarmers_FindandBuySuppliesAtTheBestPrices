@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Supplier.apps.SupplierConfig',
     'Product.apps.ProductConfig',
     'Farmer.apps.FarmerConfig',
+    'Order.apps.OrderConfig',
 ]
 
 MIDDLEWARE = [

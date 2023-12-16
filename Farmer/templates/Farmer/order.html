@@ -1,0 +1,164 @@
+{% extends 'Farmer/base.html'%}
+
+
+
+
+
+
+	{% block title%} Order {% endblock %}
+
+  
+	{% block content %}
+<main class="content">
+	<div class="container-fluid p-0">
+
+		
+
+		<div class="row">
+			
+
+			<div class="col-md-9 col-xl-10">
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="account" role="tabpanel">
+
+
+
+						<div class="card">
+							<div class="card-header">
+
+								<h4 class="card-title mb-0">Order Section</h4>
+							</div>
+							<div class="container mt-5">
+								
+								<form method="post">
+									{% csrf_token %}
+									<input type="hidden" name="action" value="add_to_cart">
+									<!-- Supplier Dropdown -->
+									<div class="mb-3">
+										<label for="supplier" class="form-label">Select Supplier:</label>
+										<select class="form-select" id="supplier" name="supplier_type">
+											{% for supplier in supplier_model %}
+												<option value="{{ supplier.supplierType }}">{{ supplier.supplierType }}</option>
+											{% endfor %}
+										</select>
+									</div>
+									
+									<!-- Product Dropdown -->
+									<div class="mb-3">
+										<label for="product" class="form-label">Select Product:</label>
+										<select class="form-select" id="product" name="product_name">
+											{% for product in product_model %}
+												<option value="{{ product.productName }}">{{ product.productName }}</option>
+											{% endfor %}
+										</select>
+									</div>
+									
+									<!-- Quantity Input -->
+									<div class="mb-3">
+										<label for="quantity" class="form-label">Quantity:</label>
+										<input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter quantity">
+									</div>
+								
+									<!-- Add to Cart Button -->
+									<button type="submit" class="btn btn-primary">Add to Cart</button>
+									<div class="mt-6">
+										<h3 class="text-center">Cart Details</h3>
+	
+										<!-- Cart Table -->
+										<table class="table mt-4">
+											<thead>
+												<tr>
+													<th>Supplier</th>
+													<th>Product Name</th>
+													<th>Quantity</th>
+													<th>Price</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for item in cart_items %}
+												<tr>
+													<td>{{ item.supplier }}</td>
+													<td>{{ item.product }}</td>
+													<td>{{ item.quantity }}</td>
+													<td>{{ item.totalPrice }}</td>
+													<td>
+														<button type="button" class="btn btn-danger">Remove</button>
+													</td>
+												</tr>
+												{% endfor %}
+												<!-- Add more rows as needed -->
+												<tr>
+													<td colspan="2"></td>
+													<td><b>Delivery charge:</b></td>
+													<td><b>{{ delivery_charge }}</b>/-</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td colspan="2"></td>
+													<td><b>Total:</b></td>
+													<td><b>{{ final_total }}</b>/-</td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</form>
+								
+								
+								  
+							  </div>
+
+							
+
+
+
+
+
+						</div>
+						<div class="card">
+							
+							<div class="container mt-5">
+								
+								<form method="post">
+									{% csrf_token %}
+
+									<input type="hidden" name="action" value="place_order">
+								 
+								 <!-- Address Section -->
+								 <div class="mb-3 mt-4">
+									<label for="address" class="form-label">Farmer ID:</label>
+									<input type="text" class="form-control mb-2" id="farmerID" name="farmerID" placeholder="Farmer ID">
+									<label for="address" class="form-label">Address:</label>
+									<input type="text" class="form-control mb-2" id="home" name="home" placeholder="Home">
+									<input type="text" class="form-control mb-2" id="street" name="street" placeholder="Street">
+									<input type="text" class="form-control mb-2" id="zip" name="zip" placeholder="ZIP">
+									<input type="text" class="form-control mb-2" id="city" name="city" placeholder="City">
+								  </div>
+								  <div class="mb-3">
+									<label for="order_date" class="form-label">Order Date:</label>
+									<input type="date" class="form-control" id="order_date" name="order_date" required>
+								</div>
+								<button type="submit" class="btn btn-primary mb-4">Place Order</button>
+							  </div>
+								
+								</form>
+								
+
+							
+
+
+
+
+
+						</div>
+					</div>
+
+				</div>
+				
+				</div>
+		</div>
+
+	</div>
+</main>
+	{% endblock%}

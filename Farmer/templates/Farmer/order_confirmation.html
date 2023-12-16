@@ -1,0 +1,28 @@
+{% extends 'Farmer/base.html' %}
+
+{% block title %} Order Confirmation {% endblock %}
+
+{% block content %}
+<main class="content">
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0">Order Confirmation</h4>
+            </div>
+            <div class="card-body">
+                <p>Your order has been successfully placed. Here are the details:</p>
+                <ul>
+                    <li><strong>Order ID:</strong> {{ order_instance.orderId }}</li>
+                    <li><strong>Supplier:</strong> {{ order_instance.supplierID }}</li>
+                    <li><strong>Product:</strong> {{ order_instance.productID }}</li>
+                    <li><strong>Farmer ID:</strong> {{ order_instance.farmerID }}</li>
+                    <li><strong>Order Date:</strong> {{ order_instance.orderDate }}</li>
+                    <li><strong>Quantity:</strong> {{ order_instance.quantity }}</li>
+                    <li><strong>Total Price:</strong> {{ order_instance.totalPrice }}</li>
+                </ul>
+                <p>Thank you for your order!</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

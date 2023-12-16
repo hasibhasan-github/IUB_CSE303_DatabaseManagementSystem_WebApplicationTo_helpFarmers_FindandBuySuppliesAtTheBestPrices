@@ -13,3 +13,14 @@ class fTable(models.Model):
     zip = models.CharField(max_length=10, blank=True)
     city = models.CharField(max_length=50, blank=True)
     contactnumber = models.CharField(max_length=15, blank=True)
+
+
+
+class Cart(models.Model):
+    supplier = models.CharField(max_length=255)
+    product = models.CharField(max_length=255)
+    quantity = models.IntegerField()
+    totalPrice = models.DecimalField(max_digits=10, decimal_places=2)
+
+    
+

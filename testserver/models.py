@@ -22,3 +22,8 @@ class Test(models.Model):
 class bug(models.Model):
     id = models.IntegerField(primary_key=True, default=784)
     user = models.CharField(max_length=30, default='Hasib')
+
+
+class bug2(models.Model):
+    id = models.IntegerField(primary_key=True, default=784)
+    user = models.CharField(max_length=30, default='Farmer')

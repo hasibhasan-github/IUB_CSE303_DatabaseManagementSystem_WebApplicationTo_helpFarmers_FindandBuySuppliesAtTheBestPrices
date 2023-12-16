@@ -1,0 +1,38 @@
+{% extends 'mainSite/base.html'%}
+
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" action="">
+
+                {% csrf_token%}
+                {{form}}
+                
+                {% comment %} <div>
+                    <label for="">value1</label>
+                    <input type="text" name="num1" class="form-control">
+                </div>
+                <div>
+                    <label for="">value2</label>
+                    <input type="text" name="num2" class="form-control">
+                </div> {% endcomment %}
+                <div class="pt-4 mb-2">
+                    <button type="submit">
+                        sum
+                    </button>
+                </div>
+                <div>
+                    <label for="">Result</label>
+                    <input type="text" value="{{output}}" class="form-control">
+                </div>
+    
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
