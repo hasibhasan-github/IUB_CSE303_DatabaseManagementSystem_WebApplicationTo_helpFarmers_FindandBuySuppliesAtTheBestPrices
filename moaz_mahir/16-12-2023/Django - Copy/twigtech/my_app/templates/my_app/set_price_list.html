@@ -1,0 +1,80 @@
+{% comment %} {% extends 'tables.html' %} {% endcomment %}
+
+{% comment %} <h1>List of set_price_list (ListView)</h1> {% endcomment %}
+
+{% comment %} <ul>
+{% for set_price in set_price_list %}
+    <li>
+        {{set_price.Upper_Price}} {{set_price.Lower_Price}}
+    </li>
+{% endfor %}
+
+</ul> {% endcomment %}
+
+
+{% comment %} {% block content %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>description</th>
+            <th>created</th>
+            <th>updated</th>
+            <th>actions</th>
+        </tr>
+        {% for table in tables %}
+            <tr>
+                <td>{{ table.id }}</td>
+                <td>{{ table.name }}</td>
+                <td>{{ table.description }}</td>
+                <td>{{ table.created }}</td>
+                <td>{{ table.updated }}</td>
+                <td>
+                    <a href="{{ url_for('tables.show', id=table.id) }}">Show</a>
+                    <a href="{{ url_for('tables.edit', id=table.id) }}">Edit</a>
+                    <a href="{{ url_for('tables.delete', id=table.id) }}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+``` {% endcomment %}
+
+
+<!-- tables.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Price List</title>
+</head>
+<body>
+
+  <h1>Set Price List</h1>
+
+  <form method="post" action="{% url 'my_app:Set_Price_List_And_Create' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Upper Price</th>
+        <th>Lower Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for set_price in Set_Price_List %}
+        <tr>
+          <td>{{ set_price.Upper_Price }}</td>
+          <td>{{ set_price.Lower_Price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>
