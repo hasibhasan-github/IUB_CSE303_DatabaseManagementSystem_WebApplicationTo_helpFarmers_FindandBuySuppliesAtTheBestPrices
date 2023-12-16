@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views import View
 
 # Create your views here.
 
@@ -16,6 +17,9 @@ def Research_news(request):
 #     return render(request,'machine_learning/AK-47.html')
 
 
+class Research_news1(View):
+    def get(self,request):
+        return render(request,'research_news/class.html')
 
 
 

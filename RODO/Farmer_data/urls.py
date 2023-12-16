@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.Farmer_data),
+    path('f/', views.Farmer_data),
     
 ]
