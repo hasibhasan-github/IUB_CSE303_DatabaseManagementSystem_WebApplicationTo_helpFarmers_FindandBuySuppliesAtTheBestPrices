@@ -38,7 +38,7 @@ def register(request):
             supplier_type = form.cleaned_data['supplierType']
             user_type = form.cleaned_data['user_type']
 
-            if user_type == "supplier":
+            if user_type == "Supplier":
                 sTable.objects.create(
                     email=email,
                     fname=fname,
@@ -99,12 +99,12 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 # print(request.user.user_type)
-                if request.user.user_type == "supplier":
+                if request.user.user_type == "Supplier":
                     # print(user.get_username())
                     dataPassingOverSeas(user.get_username())
                     return redirect('testserver/')
                 elif request.user.user_type == "farmer":
-                    dataPassingOverSeasFarmer(user.get_username)
+                    dataPassingOverSeasFarmer(user.get_username())
                     return redirect('Farmer/')
                 else:
                     msg = "User doesn't exits!"
