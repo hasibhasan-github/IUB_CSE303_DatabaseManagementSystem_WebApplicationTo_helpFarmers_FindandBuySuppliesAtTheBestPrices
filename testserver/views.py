@@ -11,6 +11,8 @@ from .models import bug
 from Product.models import pTable
 from testserver.models import Test
 from django.urls import reverse_lazy
+from Order.models import oTable
+from Product.models import pTable
 
 # Create your views here.
 
@@ -60,9 +62,20 @@ def ProfileView(request):
         pass 
     else:
         s_table_instance, s_table_created = sTable.objects.get_or_create(supplierID=bug_instance.user)
+        orders = oTable.objects.filter(supplierID=s_table_instance.supplierID)
+        orderList = [order.orderId for order in orders]
+        prodId = [order.productID for order in orders] 
+        prodIdL = prodId[-1]
+        #print(prodIdL.productID)
+        prodInsance = pTable.objects.filter(productID=prodIdL.productID)
+        productname = [order.productName for order in prodInsance] 
+        prodName = productname[-1]
+        LastOrder = orderList[-1]
 
     context = {
         's_table_instance': s_table_instance,
+        'prodname' : prodName,
+        'LastOrder' : LastOrder,
     }
 
     return render(request, template_name, context)
@@ -77,10 +90,29 @@ def test_view(request):
     if  bug_instance.user == 'HasibNormal':
         pass 
     else:
+        totalSale = 0
         s_table_instance, s_table_created = sTable.objects.get_or_create(supplierID=bug_instance.user)
+        # order_instance, created = oTable.objects.get_or_create(supplierID=s_table_instance.supplierID)
+        orders = oTable.objects.filter(supplierID=s_table_instance.supplierID)
+        orderList = [order.totalPrice for order in orders]
+        prodId = [order.productID for order in orders] 
+        prodIdL = prodId[-1]
+        #print(prodIdL.productID)
+        prodInsance = pTable.objects.filter(productID=prodIdL.productID)
+        productname = [order.productName for order in prodInsance] 
+        prodName = productname[-1]
+        LastOrder = orderList[-1]
+        for price in orderList:
+            totalSale += price
+            print(price)
+        Income_Tax = float(totalSale)*(0.10)
 
     context = {
         's_table_instance': s_table_instance,
+        'totalSale' : totalSale,
+        'LastOrder' : LastOrder,
+        'prodname' : prodName,
+        'Income' : Income_Tax,
     }
 
     return render(request, template_name, context)

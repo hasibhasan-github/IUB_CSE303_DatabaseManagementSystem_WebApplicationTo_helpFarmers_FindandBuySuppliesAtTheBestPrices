@@ -113,8 +113,9 @@ def consultancy(request):
 gsuppID = 0
 gproID = 0
 gquanity =0
+gtotal = 0
 def order(request):
-    global gsuppID, gproID, gquanity
+    global gsuppID, gproID, gquanity, gtotal
     total = 0
     data = {}
     cart_items = Cart.objects.all()
@@ -141,15 +142,22 @@ def order(request):
 
 
 
-                product_list = pTable.objects.filter()
+                
 
                 selected_product = pTable.objects.get(productName=pro)
                 selected_supplier = sTable.objects.get(supplierType=supp)
-                gsuppID = selected_product.productID
-                gproID = selected_supplier.supplierID
+                gsuppID = selected_supplier.supplierID
+                gproID = selected_product.productID 
                 print(gsuppID, gproID)
+                product_list = pTable.objects.filter(supplierID=gsuppID)
+
+                product_list1 = [order.productName for order in product_list]
+
+                data['product_model'] = product_list1
 
                 total = quantity * selected_product.productPrice
+
+                gtotal = total
 
                 # Add the new item to the cart
                 Cart.objects.create(
@@ -174,25 +182,28 @@ def order(request):
                     f_table_instance, f_table_created = fTable.objects.get_or_create(farmerID=bug_instance.user)
                     gfarmerID = f_table_instance.farmerID
 
+                gfarmerIDins, created = fTable.objects.get_or_create(farmerID=gfarmerID) 
                 
                 
 
                 print(gsuppID, gproID, gfarmerID, gquanity)
                 print(supp_instance.supplierID)
-              
+
+                add =''
+                home = request.POST['home']
+                street = request.POST['street']
+                zip = request.POST['zip']
+                city = request.POST['city']
+                add += home+street+zip+city
 
                 oTable.objects.create(
                     supplierID=supp_instance,
                     productID=pro_instance,
-                    farmerID=gfarmerID,
+                    farmerID=gfarmerIDins,
                     orderDate=request.POST['order_date'],
                     quantity=gquanity,
-                    address=(
-                        request.POST['home'],
-                        request.POST['street'],
-                        request.POST['zip'],
-                        request.POST['city']
-                    )
+                    totalPrice = gtotal,
+                    address = add,
                 )
                 
                 print(gsuppID, gproID, gfarmerID, gquanity)

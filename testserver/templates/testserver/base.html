@@ -19,7 +19,7 @@
 
 {% block contentButton %}
   <!-- <p>Supplier ID: {{ s_table_instance.supplierID }}</p> -->
-  <h2> Welcome Back {{ s_table_instance.fname }} {{ s_table_instance.lname }} </h2>
+  <!-- <h2> Welcome Back {{ s_table_instance.fname }} {{ s_table_instance.lname }} </h2> -->
 {% endblock %}
 
 {% block contentDashHead %}
@@ -28,6 +28,85 @@
 
 
 {% block contentDash %}
+<div class="main-body">
+  <h2>Supplier Dashboard</h2>
+  <div class="promo_card">
+    <h1>Welcome Supplier {{ s_table_instance.fname }} {{ s_table_instance.lname }}</h1>
+    <span>
+      <p>We are delighted to welcome you to our Supplier Dashboard, the gateway to seamless collaboration and efficient management.
+         Your presence here marks a significant step toward strengthening our partnership and ensuring a smoother flow of information and resources.
+      </p>
+      <p>
+        In this secure space, you will find powerful tools and insights tailored to enhance your experience and streamline your interactions with our platform.
+         We understand the pivotal role suppliers play in our success, and this dashboard is designed with your needs in mind.
+      </p>
+      <p>
+        Thank you for being an essential part of our network. Let's embark on this journey together, navigating toward mutual growth and success.
+        Feel free to explore the features, and don't hesitate to reach out if you have any questions or feedback.
+      </p>
+    </span>
+    <button>Learn More</button>
+  </div>
+  
+  <!-- Card -->
+  <div class="ag-format-container">
+    <div class="ag-courses_box">
+      
+      
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          
+          <div class="ag-courses-item_title">
+            Total Lifetime Sale
+          </div>
+          
+          <div class="ag-courses-item_date-box">
+            BDT: 
+            <span class="ag-courses-item_date">
+              {{ totalSale }}
+            </span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          
+          <div class="ag-courses-item_title">
+            Last Sale
+          </div>
+  
+          <div class="ag-courses-item_date-box">
+            {{ prodname }} </br>
+            BDT: 
+            <span class="ag-courses-item_date">
+              {{ LastOrder  }} 
+            </span>
+          </div>
+        </a>
+      </div>    
+                      
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          
+          <div class="ag-courses-item_title">
+            Lifetime Income Tax
+          </div>
+          
+          <div class="ag-courses-item_date-box">
+            BDT: 
+            <span class="ag-courses-item_date">
+              {{ Income }}
+            </span>
+          </div>
+        </a>
+      </div>                    
+  
+    </div>
+  </div>
 
 
 {% endblock %}

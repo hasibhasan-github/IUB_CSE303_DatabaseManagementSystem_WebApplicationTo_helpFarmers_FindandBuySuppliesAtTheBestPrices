@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'Product.apps.ProductConfig',
     'Farmer.apps.FarmerConfig',
     'Order.apps.OrderConfig',
+    'ARDOfficer.apps.ArdofficerConfig',
 ]
 
 MIDDLEWARE = [

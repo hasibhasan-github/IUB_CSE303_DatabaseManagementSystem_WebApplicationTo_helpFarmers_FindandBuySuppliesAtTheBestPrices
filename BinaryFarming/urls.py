@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('LandingPage.urls')),
     path('login/testserver/', include('testserver.urls')),
     path('login/Farmer/', include('Farmer.urls')),
+    path('login/ARDOfficer/', include('ARDOfficer.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
