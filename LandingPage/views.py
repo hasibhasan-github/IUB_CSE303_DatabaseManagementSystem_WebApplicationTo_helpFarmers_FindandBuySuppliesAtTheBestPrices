@@ -103,7 +103,7 @@ def login_view(request):
                     dataPassingOverSeas(user.get_username())
                     return redirect('testserver/')
                 elif request.user.user_type == "farmer":
-                    return redirect('testserver/thanku/')
+                    return redirect('Farmer/')
                 else:
                     msg = "User doesn't exits!"
                 # return redirect('testserver/')
