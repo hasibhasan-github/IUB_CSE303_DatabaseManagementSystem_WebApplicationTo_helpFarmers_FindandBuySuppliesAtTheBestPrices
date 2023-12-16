@@ -13,5 +13,5 @@ class oTable(models.Model):
     farmerID = models.ForeignKey(fTable , on_delete= models.CASCADE)  
     orderDate = models.DateField()
     quantity = models.PositiveIntegerField()
-    totalPrice = models.DecimalField(max_digits=10, decimal_places=2) 
+    quantity = models.DecimalField(max_digits=10, decimal_places=2) 
     address = models,models.CharField( max_length=500)

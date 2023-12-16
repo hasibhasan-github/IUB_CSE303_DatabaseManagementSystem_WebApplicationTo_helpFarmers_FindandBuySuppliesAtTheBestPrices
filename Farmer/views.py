@@ -31,6 +31,7 @@ bugg("FarmerNormal")
 
 def get_supplier_by_username(email):
     supplier = get_object_or_404(User, email=email)
+    print(supplier.pk)
     bugg(supplier.pk)
 
 def get_user_by_username(username):
@@ -39,7 +40,9 @@ def get_user_by_username(username):
 
 
 def dataPassingOverSeasFarmer(username):
+    # print(username)
     get_user_by_username(username)
+
 # End
 
 
@@ -60,8 +63,6 @@ def consultancy(request):
     return render(request, ('Farmer/consultancy.html'))
    
    
-def order(request):
-    pass
 
 # def order(request):
 #     total = 0
@@ -109,8 +110,11 @@ def order(request):
 
 #     return render(request, 'mainSite/order.html', data)
 
-
+gsuppID = 0
+gproID = 0
+gquanity =0
 def order(request):
+    global gsuppID, gproID, gquanity
     total = 0
     data = {}
     cart_items = Cart.objects.all()
@@ -119,18 +123,31 @@ def order(request):
 
     data['product_model'] = product_model
     data['supplier_model'] = supplier_model
+    product_list = []
 
     try:
+       
         if request.method == 'POST':
             action = request.POST.get('action')
 
             if action == 'add_to_cart':
                 # Add to Cart logic
                 supp = request.POST['supplier_type']
+                
+               
                 pro = request.POST['product_name']
                 quantity = int(request.POST['quantity'])
+                gquanity = quantity
+
+
+
+                product_list = pTable.objects.filter()
 
                 selected_product = pTable.objects.get(productName=pro)
+                selected_supplier = sTable.objects.get(supplierType=supp)
+                gsuppID = selected_product.productID
+                gproID = selected_supplier.supplierID
+                print(gsuppID, gproID)
 
                 total = quantity * selected_product.productPrice
 
@@ -141,13 +158,48 @@ def order(request):
                     quantity=quantity,
                     totalPrice=total
                 )
-                print(supp)
+                
 
             elif action == 'place_order':
-
-
-
                 Cart.objects.all().delete()
+
+                gfarmerID = 0
+                bug_instance, created = bug2.objects.get_or_create(id=784) 
+                supp_instance, created = sTable.objects.get_or_create(supplierID=gsuppID) 
+                pro_instance, created = pTable.objects.get_or_create(productID=gproID) 
+        
+                if  bug_instance.user == 'FarmerNormal':
+                    pass 
+                else:
+                    f_table_instance, f_table_created = fTable.objects.get_or_create(farmerID=bug_instance.user)
+                    gfarmerID = f_table_instance.farmerID
+
+                
+                
+
+                print(gsuppID, gproID, gfarmerID, gquanity)
+                print(supp_instance.supplierID)
+              
+
+                oTable.objects.create(
+                    supplierID=supp_instance,
+                    productID=pro_instance,
+                    farmerID=gfarmerID,
+                    orderDate=request.POST['order_date'],
+                    quantity=gquanity,
+                    address=(
+                        request.POST['home'],
+                        request.POST['street'],
+                        request.POST['zip'],
+                        request.POST['city']
+                    )
+                )
+                
+                print(gsuppID, gproID, gfarmerID, gquanity)
+               
+                
+
+                
                 
                
 
@@ -163,7 +215,7 @@ def order(request):
     data['delivery_charge'] = delivery_charge
     data['final_total'] = final_total
 
-    return render(request, 'mainSite/order.html', data)
+    return render(request, 'Farmer/order.html', data)
 
 
 

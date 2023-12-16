@@ -38,7 +38,7 @@
 										<label for="supplier" class="form-label">Select Supplier:</label>
 										<select class="form-select" id="supplier" name="supplier_type">
 											{% for supplier in supplier_model %}
-												<option value="{{ supplier.supplierType }}">{{ supplier.supplierType }}</option>
+												<option value="{{ supplier.supplierType }}">{{ supplier.supplierType }}{{ supplier.supplierID }}</option>
 											{% endfor %}
 										</select>
 									</div>
