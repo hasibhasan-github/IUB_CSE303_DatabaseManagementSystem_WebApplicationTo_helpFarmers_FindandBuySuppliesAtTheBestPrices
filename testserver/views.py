@@ -2,7 +2,7 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView, FormView, CreateView, ListView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView, UpdateView, DeleteView
 from testserver.forms import Testform
 from Supplier.models import sTable
 from django.shortcuts import get_object_or_404
@@ -13,6 +13,7 @@ from testserver.models import Test
 from django.urls import reverse_lazy
 from Order.models import oTable
 from Product.models import pTable
+
 
 # Create your views here.
 
@@ -179,5 +180,50 @@ class TestProductListView(ListView):
         return queryset
 
 
+class ProductDetailView(DetailView):
+    model = pTable
+
+class ProductUpdateView(UpdateView):
+    model = pTable
+    fields = ['productName', 'productPrice']
+    success_url = reverse_lazy('testserver:productlist')
+
+
     # context_object_name = "ProductList" // For changing object List
 
+
+class ProductDeleteView(DeleteView):
+    Model = pTable
+    success_url = reverse_lazy('testserver:productlist')
+
+
+    def get_queryset(self):
+        bug_instance, created = bug.objects.get_or_create(id=784) 
+        
+        if  bug_instance.user == 'HasibNormal':
+            pass 
+        else:
+            s_table_instance, s_table_created = sTable.objects.get_or_create(supplierID=bug_instance.user)
+
+        queryset = pTable.objects.filter(supplierID =  s_table_instance.supplierID )
+
+        return queryset
+
+
+
+class OrderListView(ListView):
+    model = oTable
+    # queryset = pTable.objects.order_by('productName')
+    
+    
+    def get_queryset(self):
+        bug_instance, created = bug.objects.get_or_create(id=784) 
+        
+        if  bug_instance.user == 'HasibNormal':
+            pass 
+        else:
+            s_table_instance, s_table_created = sTable.objects.get_or_create(supplierID=bug_instance.user)
+
+        queryset = oTable.objects.filter(supplierID =  s_table_instance.supplierID )
+
+        return queryset

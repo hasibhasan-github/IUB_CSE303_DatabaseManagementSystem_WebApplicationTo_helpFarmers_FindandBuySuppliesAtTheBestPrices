@@ -1,5 +1,5 @@
 {% extends 'SupplierDashboardBase.html' %}
-
+{% load static %} 
 
 {% block contentHome %}
 <li><a href="{% url 'testserver:test' %}">
@@ -39,9 +39,12 @@
           </form>
     </div> -->
 
-
+    <div style="
+    margin-left: 22%;">
+      <img src="{% static 'testserver/prod.png' %}" alt="">
+    </div>
     <form class="row g-3" method="post" action="" style="
-    padding: 18%;">
+    padding: 1%;">
       {% csrf_token %}
       
       <div class="col-auto">
@@ -49,14 +52,14 @@
         {{ form.productName }}
       </div>
     
-      <div class="col-auto">
+      <div class="col-auto" style="margin-left: 35%;">
         {{ form.productPrice.label_tag }}
         {{ form.productPrice }}
       </div>
     
       <div class="col-auto">
         <input type="submit" value="Submit" class="button-30" role="button" style="
-        margin-top: 2%;
+        margin-top: 1%;
         margin-left: 45%;">
       </div>
     </form>

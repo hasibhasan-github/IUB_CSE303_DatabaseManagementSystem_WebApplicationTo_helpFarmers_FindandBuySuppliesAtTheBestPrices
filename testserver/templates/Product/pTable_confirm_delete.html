@@ -1,0 +1,48 @@
+{% extends 'SupplierDashboardBase.html' %}
+{% load static %}  
+
+{% block contentHome %}
+<li><a href="{% url 'testserver:test' %}">
+  <i class="fas fa-home"></i>
+  <span class="nav-item">Home</span>
+</a></li>
+{% endblock %}
+
+
+{% block contentProduct %}
+  <li><a href="{% url 'testserver:productlist' %}">
+    <i class="fas fa-wallet"></i>
+    <span class="nav-item">Products</span>
+  </a></li>  
+{% endblock %}
+
+
+{% block contentButton %}
+  <!-- <p>Supplier ID: {{ s_table_instance.supplierID }}</p> -->
+  <!-- <h2> Welcome Back {{ s_table_instance.fname }} {{ s_table_instance.lname }} </h2> -->
+{% endblock %}
+
+{% block contentDashHead %}
+  <h1>DELETE</h1>
+{% endblock %}
+
+
+{% block contentDash %}
+<div style="
+    margin-left: 40%;">
+    <img src="{% static 'testserver/delete.jpg' %}" alt="">
+</div>
+<div>
+    <h2 style="margin-left: 30%;  margin-top: 2%;">Do you want to Delete {{ ptable.productName }} with a ProductID {{ ptable.productID }} ?</h2>
+</div>
+<div style="
+margin-left: 50%; margin-top: 1%;">
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Submit" class="button-30" role="button">
+      </form>
+</div>
+
+{% endblock %}
+
+

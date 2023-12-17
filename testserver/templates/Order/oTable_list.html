@@ -18,12 +18,12 @@
 
 
 {% block contentDashHead %}
-  <h1>Products</h1>
+  <h1>Orders</h1>
 {% endblock %}
 
 
 {% block contentButton %}
-<a href="{% url 'testserver:product' %}" class="button-30" role="button">Add New Products</a>
+<!-- <a href="{% url 'testserver:product' %}" class="button-30" role="button">Add New Products</a> -->
 {% endblock %}
 
 
@@ -32,16 +32,16 @@
 <div class="table-box">
   <div class="table-row table-head">
       <div class="table-cell first-cell">
-          <p>Product Name</p>
+          <p>Order ID</p>
       </div>
       <div class="table-cell">
-          <p>Product Price</p>
+          <p>Order Date</p>
       </div>
       <div class="table-cell ">
-          <p>Update Details</p>
+          <p>Quantity</p>
       </div> 
       <div class="table-cell last-cell">
-          <p>Delete Product</p>
+          <p>ProductID</p>
       </div> 
   </div>
 
@@ -50,17 +50,16 @@
   {% for products in object_list %}
   <div class="table-row">
     <div class="table-cell first-cell">
-        <p>{{ products.productName }}</p>
+        <p>{{ products.orderId }}</p>
     </div>
     <div class="table-cell">
-        <p>{{ products.productPrice }}</p>
+        <p>{{ products.orderDate }}</p>
     </div>
     <div class="table-cell ">
-        <a href="{% url 'testserver:productupdate' products.productID %}"> Update </a>
-        <!-- <p>Update Details </p> -->
+        <p>{{ products.quantity }}</p>
     </div> 
     <div class="table-cell last-cell">
-        <a href="{% url 'testserver:productdelete' products.productID %}"> Delete </a>
+        <p>{{ products.productID_id }}</p>
     </div> 
 </div>
 {% endfor %}  

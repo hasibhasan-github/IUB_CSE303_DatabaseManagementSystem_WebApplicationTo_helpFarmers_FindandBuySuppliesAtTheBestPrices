@@ -9,3 +9,6 @@ class pTable(models.Model):
     supplierID = models.ForeignKey(sTable, on_delete=models.CASCADE)
     productPrice = models.DecimalField(max_digits=10, decimal_places=2)
     productName = models.CharField(max_length=30) 
+
+    def __str__(self):
+        return f"{self.productName} (ID: {self.productID})"
