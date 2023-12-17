@@ -1,0 +1,31 @@
+{% extends 'ARDOfficer/base.html' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block content %}
+    <section class="home-section">
+        <div class="text">Contacts</div>
+    </section>
+
+    <center>
+    {% for event in event_list %}
+        <strong>{{event}}</strong>
+        <ul>
+            <li>{{event.event_name }}</li>
+            <li>{{event.event_date }}</li>
+            <li>{{event.event_venue }}</li>
+            <li>{{event.event_manager }}</li>
+        </ul>
+        <br/>
+    {% endfor %}        
+
+    <h1 class="heading">Add Consultancy To Database</h1>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value="Submit" >
+    </form>
+    <center>
+{% endblock %}

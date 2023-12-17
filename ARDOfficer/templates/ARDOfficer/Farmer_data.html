@@ -1,0 +1,92 @@
+{% extends 'ARDOfficer/base.html' %}
+
+{% block title %}File Manager{% endblock %}
+
+{% block content %}
+  {% comment %} <link rel="stylesheet" href="{% static 'Css/styleAD.css' %}" /> {% endcomment %}
+
+    <section class="home-section">
+        <div class="text">File Manager</div>
+    </section>
+
+    <h1 class="heading">Farmers data</h1>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Farmer ID</th>
+          <th>Farmer Name</th>
+          <th>Email</th>
+          <th>Consult Product</th>
+          <th>Consultancy Date</th>
+          <th>Status</th>
+          <th>Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>2221683</td>
+            <td>Shayra</td>
+            <td>shayra0795@gmail.com</td>
+            <td>Tomato</td>
+            <td>30/11/23</td>
+            <td>
+              <input type="checkbox" id="status1" name="status1" value="accepted">
+              <label for="status1">Accepted</label>
+              <input type="checkbox" id="status2" name="status2" value="rejected">
+              <label for="status2">Rejected</label>
+          </td>
+          <td>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2221783</td>
+          <td>Masum</td>
+          <td>masum0895@gmail.com</td>
+          <td>Rice</td>
+          <td>03/12/23</td>
+          <td>
+            <input type="checkbox" id="status1" name="status1" value="accepted">
+            <label for="status1">Accepted</label>
+            <input type="checkbox" id="status2" name="status2" value="rejected">
+            <label for="status2">Rejected</label>
+        </td>
+        <td>
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </td>
+        </tr>
+
+        <tr>
+          <td>2231690</td>
+          <td>Mahin</td>
+          <td>mahin123@gmail.com</td>
+          <td>Fish</td>
+          <td>02/12/23</td>
+          <td>
+            <input type="checkbox" id="status1" name="status1" value="accepted">
+            <label for="status1">Accepted</label>
+            <input type="checkbox" id="status2" name="status2" value="rejected">
+            <label for="status2">Rejected</label>
+        </td>
+        <td>
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </td>
+        </tr>
+
+        <tr>
+            <td>More Data 1</td>
+            <td>More Data 2</td>
+            <td>More Data 3</td>
+            <td>More Data 4</td>
+            <td>More Data 5</td>
+            <td>More Data 6</td>
+            <td>More Data 7</td>
+        </tr>
+      </tbody>
+    </table>
+{% endblock %}

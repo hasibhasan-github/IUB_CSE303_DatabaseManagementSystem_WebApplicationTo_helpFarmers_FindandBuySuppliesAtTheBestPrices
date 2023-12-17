@@ -1,0 +1,30 @@
+{% extends 'ARDOfficer/base.html' %}
+
+{% block title %}Planning{% endblock %}
+
+{% block content %}
+    <section class="home-section">
+        <div class="text">Planning</div>
+    </section>
+
+    
+    <div class="financial-tools">
+        <h1>Agricultural Financial Tools</h1>
+        <div class="budget">
+            <h2>Budget Calculator</h2>
+            <label for="income">Total Income:</label>
+            <input type="number" id="income">
+            <label for="expenses">Total Expenses:</label>
+            <input type="number" id="expenses">
+            <p class="budget-result">Budget: $0</p>
+        </div>
+        <div class="expense-tracking">
+            <h2>Expense Tracking</h2>
+            <label for="expenseType">Expense Type:</label>
+            <input type="text" id="expenseType">
+            <label for="expenseAmount">Expense Amount:</label>
+            <input type="number" id="expenseAmount">
+            <p class="expense-list">Expenses:</p>
+        </div>
+    </div>
+{% endblock %}
