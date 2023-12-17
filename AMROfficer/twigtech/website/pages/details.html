@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Price List</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+</head>
+
+<body>
+
+    <h1>supplier details</h1>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>supplierID</th>
+                    <th>fname</th>
+                    <th>lname</th>
+                    <th>email</th>
+                    <th>gender</th>
+                    <th>address</th>
+                    <th>contactNumber</th>
+                    <th>supplierType</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for supplier_list in Supplier_List %}
+                <tr>
+                    <td>{{ supplier_list.supplierID }}</td>
+                    <td>{{ supplier_list.fname }}</td>
+                    <td>{{ supplier_list.lname }}</td>
+                    <td>{{ supplier_list.email }}</td>
+                    <td>{{ supplier_list.gender }}</td>
+                    <td>{{ supplier_list.address }}</td>
+                    <td>{{ supplier_list.contactNumber }}</td>
+                    <td>{{ supplier_list.supplierType }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h1>product details</h1>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ProductID</th>
+                    <th>supplierID</th>
+                    <th>productName</th>
+                    <th>productPrice</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for product_list in Product_List %}
+                <tr>
+                    <td>{{ product_list.ProductID }}</td>
+                    <td>{{ product_list.supplierID.supplierID }}</td>
+                    <td>{{ product_list.productName }}</td>
+                    <td>{{ product_list.productPrice }}</td>
+                    <!-- <td>{{ product_list.supplierID }}</td> -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h1>farmer details</h1>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>farmerID</th>
+                    <th>fname</th>
+                    <th>lname</th>
+                    <th>email</th>
+                    <th>gender</th>
+                    <th>address</th>
+                    <th>contactNumber</th>
+                    <th>cropType</th>
+                    <th>livestockType</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for farmer_list in Farmer_List %}
+                <tr>
+                    <td>{{ farmer_list.farmerID }}</td>
+                    <td>{{ farmer_list.fname }}</td>
+                    <td>{{ farmer_list.lname }}</td>
+                    <td>{{ farmer_list.email }}</td>
+                    <td>{{ farmer_list.gender }}</td>
+                    <td>{{ farmer_list.address }}</td>
+                    <td>{{ farmer_list.contactNumber }}</td>
+                    <td>{{ farmer_list.cropType }}</td>
+                    <td>{{ farmer_list.livestockType }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h1>offered price details</h1>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>farmerID</th>
+                    <th>ProductID</th>
+                    <th>AMROfficerID</th>
+                    <th>offeredPrice</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for offered_price_list in Offered_Price_List %}
+                <tr>
+                    <td>{{ offered_price_list.farmerID.farmerID }}</td>
+                    <td>{{ offered_price_list.ProductID.ProductID }}</td>
+                    <td>{{ offered_price_list.AMROfficerID }}</td>
+                    <td>{{ offered_price_list.offeredPrice }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Your existing HTML code -->
+
+    <h1>Dependent drop down</h1>
+
+
+    <!-- <form method="post">
+    {% csrf_token %}
+
+    {{ set_price_form.as_p }}
+
+    <select name="supplier" id="id_supplier">
+        <option value="" selected disabled>Select Supplier</option>
+        {% for supplier in suppliers %}
+            <option value="{{ supplier.id }}">{{ supplier.fname }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="product" id="id_product">
+        <option value="" selected disabled>Select Product</option>
+        {% for product in products %}
+            <option value="{{ product.id }}">{{ product.productName }}</option>
+        {% endfor %}
+    </select>
+
+    {{ offered_price_form.as_p }}
+    {{ product_form.as_p }}
+
+    <button type="submit">Submit</button>
+</form> -->
+
+    <!-- <form method="post">
+    {% csrf_token %}
+
+    {{ set_price_form.as_p }}
+
+    <select name="supplier" id="supplier-dropdown">
+        <option value="" selected disabled>Select Supplier</option>
+        {% for supplier in Supplier_List %}
+        <option value="{{ supplier.id }}">{{ supplier.supplierType }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="product" id="product-dropdown">
+        <option value="" selected disabled>Select Product</option>
+        {% for product in Product_List %}
+        <option value="{{ product.id }}">{{ product.productName }}</option>
+        {% endfor %}
+    </select>
+
+    {{ offered_price_form.as_p }}
+    {{ product_form.as_p }}
+
+    <button type="submit">Submit</button>
+</form> -->
+
+
+    <!-- <form method="get">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    {{ set_price_form.as_p }}
+
+    <select name="supplier" id="supplier-dropdown">
+        <option value="" selected disabled>Select Supplier</option>
+        {% for supplier in Supplier_List %}
+        <option value="{{ supplier.id }}">{{ supplier.supplierType }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="product" id="product-dropdown">
+        <option value="" selected disabled>Select Product</option>
+        {% for product in Product_List %}
+        <option value="{{ product.id }}" data-supplier="{{ product.supplier.id }}">{{ product.productName }}</option>
+        {% endfor %}
+    </select>
+
+    {{ offered_price_form.as_p }}
+    {{ product_form.as_p }}
+
+    <button type="submit">Submit</button>
+</form> -->
+
+    <!-- details.html -->
+
+    <!-- <form method="get">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form> -->
+
+
+
+
+
+    <!-- Your existing HTML code -->
+
+
+    <!-- Display Supplier List -->
+    <!-- <select id="supplier-dropdown">
+    {% for supplier in Supplier_List %}
+    <option value="{{ supplier.id }}">{{ supplier.supplierType }}</option>
+    {% endfor %}
+</select> -->
+
+    <!-- Display Product List -->
+    <!-- <select id="product-dropdown">
+    {% for product in Product_List %}
+    <option value="{{ product.id }}">{{ product.productName }}</option>
+    {% endfor %}
+</select> -->
+<!-- <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button>Submit</button>
+</form> -->
+
+<h1>Book Search</h1>
+    <!-- Display the form -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Search">
+    </form>
+    <!-- Display the table data -->
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.genre }}</td>
+            <td>{{ book.price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+
+</html>
