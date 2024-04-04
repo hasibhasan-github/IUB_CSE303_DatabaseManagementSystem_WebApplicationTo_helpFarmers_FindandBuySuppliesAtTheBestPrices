@@ -5,14 +5,15 @@ In this project for the Database Management System course at IUB, we aim to deve
 #### ** Please check the "WebApplicationToHelpFarmersFindAndBuySuppliesAtTheBestPrices" branch for full webapplication app. Thank you!
 
 
-#### Authors:
+#### Authors
 
-1. @hasibhasan-github
-Md. Masum Billa - 2221793@iub.edu.bd
-Md. Hasib Hasan - 2220166@iub.edu.bd
-Moaz - 2220368@iub.edu.bd
-Mahir Faisal - 2221913@iub.edu.bd
-A. H. M. Imtiaj - 2110390@iub.edu.bd
+- [Md. Hasib Hasan](https://github.com/hasibhasan-github) 
+- [Abdullah Al Mamun](https://github.com/abdullah2111) 
+- [Md. Masum Billa](https://github.com/Maasum0895) 
+- [Moaz](https://github.com/Moaz1511) 
+- [Mahir Faisal](https://github.com/MFShowmik06) 
+- [A. H. M. Imtiaj](https://github.com/Imtiaj09) 
+
 
 
 ## Overview:
