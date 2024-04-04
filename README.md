@@ -4,6 +4,17 @@ In this project for the Database Management System course at IUB, we aim to deve
 
 #### ** Please check the "WebApplicationToHelpFarmersFindAndBuySuppliesAtTheBestPrices" branch for full webapplication app. Thank you!
 
+
+#### Authors:
+
+1. @hasibhasan-github
+Md. Masum Billa - 2221793@iub.edu.bd
+Md. Hasib Hasan - 2220166@iub.edu.bd
+Moaz - 2220368@iub.edu.bd
+Mahir Faisal - 2221913@iub.edu.bd
+A. H. M. Imtiaj - 2110390@iub.edu.bd
+
+
 ## Overview:
 Our project introduces a web application aimed at revolutionizing the agricultural supply chain by facilitating farmers in finding and purchasing agricultural supplies at competitive prices. Developed by a team of computer science undergraduates from Independent University, Bangladesh, the platform offers an intuitive interface for farmers to browse products, compare prices from different suppliers, and make informed decisions.
 
