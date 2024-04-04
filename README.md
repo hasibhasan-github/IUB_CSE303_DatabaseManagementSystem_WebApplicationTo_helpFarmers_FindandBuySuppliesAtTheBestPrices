@@ -42,4 +42,11 @@ The application witnessed significant user engagement, with an active user adopt
 Our web application project signifies a significant advancement in modernizing the agricultural supply chain. By leveraging technologies such as Django, MySQL, HTML, and CSS, we aim to empower farmers with a convenient and efficient platform for sourcing agricultural supplies. The successful collaboration with suppliers, real-time pricing functionality, and claimed cost reductions highlight the efficacy of our platform in enhancing the agricultural ecosystem.
 
 
+#### Authors
+
+- [Md. Hasib Hasan](https://github.com/hasibhasan-github) 
+- [Abdullah Al Mamun](https://github.com/abdullah2111) 
+- [Md. Masum Billa](https://github.com/Maasum0895) 
+- [Moaz](https://github.com/Moaz1511) 
+- [A. H. M. Imtiaj](https://github.com/Imtiaj09) 
 
