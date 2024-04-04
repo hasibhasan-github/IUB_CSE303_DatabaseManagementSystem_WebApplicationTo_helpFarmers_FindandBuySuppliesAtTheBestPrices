@@ -5,16 +5,6 @@ In this project for the Database Management System course at IUB, we aim to deve
 #### ** Please check the "WebApplicationToHelpFarmersFindAndBuySuppliesAtTheBestPrices" branch for full webapplication app. Thank you!
 
 
-#### Authors
-
-- [Md. Hasib Hasan](https://github.com/hasibhasan-github) 
-- [Abdullah Al Mamun](https://github.com/abdullah2111) 
-- [Md. Masum Billa](https://github.com/Maasum0895) 
-- [Moaz](https://github.com/Moaz1511) 
-- [Mahir Faisal](https://github.com/MFShowmik06) 
-- [A. H. M. Imtiaj](https://github.com/Imtiaj09) 
-
-
 
 ## Overview:
 Our project introduces a web application aimed at revolutionizing the agricultural supply chain by facilitating farmers in finding and purchasing agricultural supplies at competitive prices. Developed by a team of computer science undergraduates from Independent University, Bangladesh, the platform offers an intuitive interface for farmers to browse products, compare prices from different suppliers, and make informed decisions.
@@ -55,5 +45,16 @@ Increased Product Variety: The platform currently offers a diverse range of 150 
 The application witnessed significant user engagement, with an active user adoption rate of 40%.
 ## Conclusion:
 Our web application project signifies a significant advancement in modernizing the agricultural supply chain. By leveraging technologies such as Django, MySQL, HTML, and CSS, we aim to empower farmers with a convenient and efficient platform for sourcing agricultural supplies. The successful collaboration with suppliers, real-time pricing functionality, and claimed cost reductions highlight the efficacy of our platform in enhancing the agricultural ecosystem.
+
+
+#### Authors
+
+- [Md. Hasib Hasan](https://github.com/hasibhasan-github) 
+- [Abdullah Al Mamun](https://github.com/abdullah2111) 
+- [Md. Masum Billa](https://github.com/Maasum0895) 
+- [Moaz](https://github.com/Moaz1511) 
+- [Mahir Faisal](https://github.com/MFShowmik06) 
+- [A. H. M. Imtiaj](https://github.com/Imtiaj09) 
+
 
 
